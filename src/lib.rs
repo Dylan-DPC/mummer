@@ -19,9 +19,6 @@
 //! type. The file that may or may not reside at that path may or may not be a valid file of the
 //! returned MIME type.  Be wary of unsafe or un-validated assumptions about file structure or
 //! length.
-pub extern crate mime;
-extern crate unicase;
-
 pub use mime::Mime;
 
 use std::ffi::OsStr;
