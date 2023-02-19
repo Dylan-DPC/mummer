@@ -1,0 +1,84 @@
+[package]
+
+<<<<<<< HEAD
+name = "mime_guess"
+version = "2.0.4"
+authors = ["Austin Bonander <austin.bonander@gmail.com>"]
+license = "MIT"
+description = "A simple crate for detection of a file's MIME type by its extension."
+keywords = ["mime", "filesystem", "extension"]
+repository = "https://github.com/abonander/mime_guess"
+documentation = "https://docs.rs/mime_guess/"
+readme = "README.md"
+edition = "2021"
+
+[features]
+default = ["rev-mappings"]
+# FIXME: when `phf` release 0.8.0 is ready
+# phf-map = ["phf", "phf_codegen"]
+
+# generate reverse-mappings for lookup of extensions by MIME type
+# default-on but can be turned off for smaller generated code
+rev-mappings = []
+
+[dependencies]
+mime = "0.3"
+unicase = "2.4.0"
+
+#[dependencies.phf]
+## version = "0.7.24"
+## git = "https://github.com/sfackler/rust-phf"
+#path = "../rust-phf/phf"
+#features = ["unicase"]
+#optional = true
+
+[build-dependencies]
+unicase = "2.4.0"
+
+#[build-dependencies.phf_codegen]
+#version = "0.7.24"
+#git = "https://github.com/sfackler/rust-phf"
+#path = "../rust-phf/phf_codegen"
+#optional = true
+
+[dev-dependencies]
+criterion = "0.3"
+
+[[example]]
+name = "rev_map"
+required-features = ["rev-mappings"]
+
+[[bench]]
+name = "benchmark"
+harness = false
+=======
+name = "mime"
+version = "0.4.0-a.0" # remember to update html_root_url
+authors = ["Sean McArthur <sean@seanmonstar.com>"]
+license = "MIT"
+description = "Strongly Typed Mimes"
+documentation = "https://docs.rs/mime"
+repository = "https://github.com/hyperium/mime"
+keywords = ["mime", "media-extensions", "media-types"]
+edition = "2018"
+
+publish = false # breaking changes from 0.3.x
+
+[dependencies]
+mime-macro = { path = "./mime-macro", optional = true }
+mime-parse = { path = "./mime-parse" }
+proc-macro-hack = { version = "0.5", optional = true }
+quoted-string = "0.2.2"
+serde1 = { version = "1", optional = true, package = "serde" }
+
+[features]
+macro = ["mime-macro", "proc-macro-hack"]
+# "serde1" optional support
+
+[workspace]
+members = [
+    "./",
+    "mime-macro",
+    "mime-parse",
+]
+>>>>>>> mime/master
