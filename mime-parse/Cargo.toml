@@ -3,7 +3,6 @@
 name = "mime-parse"
 version = "0.0.0"
 description = "mime parsing internals"
-repository = "https://github.com/hyperium/mime"
-authors = ["Sean McArthur <sean@seanmonstar.com>"]
+repository = "https://github.com/Dylan-DPC/mummer/mime-parse"
 license = "MIT"
-edition = "2018"
+edition = "2021"

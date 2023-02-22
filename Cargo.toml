@@ -1,6 +1,7 @@
 [workspace]
 members = [
-    "./",
+    "mummer",
+    "mime",
     "mime-macro",
     "mime-parse",
 ]
